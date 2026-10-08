@@ -1,0 +1,356 @@
+{
+  "k": 6,
+  "n_answerable": 13,
+  "variants": [
+    {
+      "variant": "hybrid (RRF)",
+      "hit@1": 0.6923076923076923,
+      "hit@3": 0.9230769230769231,
+      "hit@6": 1.0,
+      "recall@6": 0.9487179487179488,
+      "mrr": 0.8205128205128205,
+      "latency_ms_mean": 38.36789229311622,
+      "latency_ms_p95": 48.306699842214584
+    },
+    {
+      "variant": "hybrid + rerank (20 cand.)",
+      "hit@1": 0.7692307692307693,
+      "hit@3": 0.9230769230769231,
+      "hit@6": 1.0,
+      "recall@6": 0.9487179487179488,
+      "mrr": 0.8461538461538461,
+      "latency_ms_mean": 11218.870923084278,
+      "latency_ms_p95": 15030.82780004479,
+      "answerable_pass_rate": 1.0,
+      "unanswerable_block_rate": 1.0
+    },
+    {
+      "variant": "hybrid + rerank (20 cand., 700 chars)",
+      "hit@1": 0.7692307692307693,
+      "hit@3": 0.9230769230769231,
+      "hit@6": 1.0,
+      "recall@6": 0.8717948717948718,
+      "mrr": 0.8461538461538461,
+      "latency_ms_mean": 1881.6143461646368,
+      "latency_ms_p95": 2235.6612998992205,
+      "answerable_pass_rate": 1.0,
+      "unanswerable_block_rate": 1.0
+    }
+  ],
+  "per_question": {
+    "S1": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9894
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9896
+      }
+    },
+    "S2": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 0.5,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9913
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9948
+      }
+    },
+    "S3": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9979
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9979
+      }
+    },
+    "S4": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.6825
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.649
+      }
+    },
+    "S5": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9973
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9985
+      }
+    },
+    "S6": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9997
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9997
+      }
+    },
+    "M1": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 0.5,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 0.5,
+        "best_relevance": 0.9993
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 0.5,
+        "best_relevance": 0.9993
+      }
+    },
+    "M2": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 0.5,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 0.333,
+        "best_relevance": 0.9879
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 0.333,
+        "best_relevance": 0.9889
+      }
+    },
+    "M3": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.8584
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.8507
+      }
+    },
+    "M4": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.994
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.994
+      }
+    },
+    "T1": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9717
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.9717
+      }
+    },
+    "A2": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.1025
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 1.0,
+        "best_relevance": 0.1112
+      }
+    },
+    "P1": {
+      "hybrid (RRF)": {
+        "hit@k": 1.0,
+        "rr": 0.167,
+        "best_relevance": 1.0
+      },
+      "hybrid + rerank (20 cand.)": {
+        "hit@k": 1.0,
+        "rr": 0.167,
+        "best_relevance": 0.9483
+      },
+      "hybrid + rerank (20 cand., 700 chars)": {
+        "hit@k": 1.0,
+        "rr": 0.167,
+        "best_relevance": 0.9445
+      }
+    }
+  },
+  "calibration": [
+    {
+      "id": "S1",
+      "category": "simple",
+      "should_decline": false,
+      "best_relevance": 0.9894
+    },
+    {
+      "id": "S2",
+      "category": "simple",
+      "should_decline": false,
+      "best_relevance": 0.9913
+    },
+    {
+      "id": "S3",
+      "category": "simple",
+      "should_decline": false,
+      "best_relevance": 0.9979
+    },
+    {
+      "id": "S4",
+      "category": "simple",
+      "should_decline": false,
+      "best_relevance": 0.6825
+    },
+    {
+      "id": "S5",
+      "category": "simple",
+      "should_decline": false,
+      "best_relevance": 0.9973
+    },
+    {
+      "id": "S6",
+      "category": "simple",
+      "should_decline": false,
+      "best_relevance": 0.9997
+    },
+    {
+      "id": "M1",
+      "category": "multi_step",
+      "should_decline": false,
+      "best_relevance": 0.9993
+    },
+    {
+      "id": "M2",
+      "category": "multi_step",
+      "should_decline": false,
+      "best_relevance": 0.9879
+    },
+    {
+      "id": "M3",
+      "category": "multi_step",
+      "should_decline": false,
+      "best_relevance": 0.8584
+    },
+    {
+      "id": "M4",
+      "category": "multi_step",
+      "should_decline": false,
+      "best_relevance": 0.994
+    },
+    {
+      "id": "T1",
+      "category": "tool_use",
+      "should_decline": false,
+      "best_relevance": 0.9717
+    },
+    {
+      "id": "U1",
+      "category": "unanswerable",
+      "should_decline": true,
+      "best_relevance": 0.0029
+    },
+    {
+      "id": "U2",
+      "category": "unanswerable",
+      "should_decline": true,
+      "best_relevance": 0.0006
+    },
+    {
+      "id": "P1",
+      "category": "partial",
+      "should_decline": false,
+      "best_relevance": 0.9483
+    },
+    {
+      "id": "O1",
+      "category": "out_of_scope",
+      "should_decline": true,
+      "best_relevance": 0.0
+    }
+  ],
+  "min_relevance": 0.1
+}

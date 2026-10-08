@@ -1,0 +1,56 @@
+# Non-secret tunables. Precedence: environment variables > .env > this file > code defaults.
+# Nested keys can be overridden from the environment with "__", e.g. RETRIEVAL__TOP_K=8.
+
+llm:
+  provider: openai            # openai | ollama
+  fallback_to_ollama: true    # on OpenAI errors (outage, rate limit) retry the call on Ollama
+  router_model: gpt-4.1-mini  # cheap tier: routing, planning, reflection
+  synth_model: gpt-4.1        # strong tier: final grounded answer
+  ollama_router_model: qwen2.5:7b-instruct
+  ollama_synth_model: qwen2.5:7b-instruct
+  temperature: 0.0
+  timeout_s: 60
+  max_retries: 2
+
+embeddings:
+  dense_model: BAAI/bge-small-en-v1.5      # 384-d, 512-token window, local ONNX
+  sparse_model: Qdrant/bm25                 # BM25 term weights, IDF applied server-side
+  reranker_model: Xenova/ms-marco-MiniLM-L-6-v2
+  batch_size: 32
+
+chunking:
+  # Token budget is an estimate (words * 1.3), kept below bge-small's 512-token window so the
+  # contextual header + chunk never gets silently truncated by the embedder.
+  # Any change here alters the stored chunker signature, so ingestion re-indexes automatically
+  # and the API refuses to start against an index built with different settings.
+  max_tokens: 380
+  overlap_tokens: 60
+  min_tokens: 50
+
+retrieval:
+  prefetch_k: 30          # candidates per retriever (dense and BM25) before fusion
+  candidate_k: 20         # fused (RRF) candidates sent to the cross-encoder
+  # Cross-encoder cost grows with passage length. Measured on a laptop CPU (docs/eval/retrieval_latency.md):
+  # full passages 11.2 s vs first 700 chars 1.9 s per query, with identical Hit@1 / MRR / gate accuracy.
+  rerank_max_chars: 700   # set to null on GPU / fast CPUs
+  top_k: 6                # chunks given to the LLM
+  min_relevance: 0.10     # sigmoid(cross-encoder) below this = "no relevant evidence"
+  keep_relevance: 0.02    # chunks below this are dropped from the context window
+
+agent:
+  max_subtasks: 4
+  max_iterations: 2       # plan/execute/reflect rounds
+  max_tool_calls: 8
+  max_evidence_chunks: 12
+  max_history_turns: 4    # previous turns used to resolve follow-up questions
+  follow_up_count: 3      # suggested follow-up questions per answer
+  follow_up_min_confidence: 0.4   # no suggestions when the answer's blended confidence is below this
+
+conversations:            # server-side history (SQLite; path via CONVERSATION_DB_PATH)
+  ttl_hours: 24           # idle conversations are deleted after this
+  max_turns: 20           # turns kept per conversation
+
+api:
+  max_question_chars: 2000
+  rate_limit: 30/minute
+  index_refresh_s: 15     # API picks up re-ingested / added / removed documents within this many seconds

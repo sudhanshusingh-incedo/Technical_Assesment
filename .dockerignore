@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.git
+.venv
+.qdrant
+models
+data/.parse_cache
+**/__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+docs
+tests
+*.sqlite*

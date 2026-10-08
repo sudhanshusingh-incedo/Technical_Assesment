@@ -1,0 +1,16 @@
+# End-to-end test run
+# date: 2026-10-08T21:51Z
+# target: local API (scripts/local.sh api), embedded Qdrant, Azure OpenAI gpt-5-mini / gpt-5.4
+
+============================= test session starts =============================
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 6 items
+
+tests/e2e/test_stack.py::test_corpus_indexed PASSED                      [ 16%]
+tests/e2e/test_stack.py::test_simple_question_is_answered_with_page_citation PASSED [ 33%]
+tests/e2e/test_stack.py::test_multi_step_question_uses_agentic_workflow PASSED [ 50%]
+tests/e2e/test_stack.py::test_unanswerable_question_is_declined PASSED   [ 66%]
+tests/e2e/test_stack.py::test_prompt_injection_is_refused PASSED         [ 83%]
+tests/e2e/test_stack.py::test_stream_returns_verified_tokens_confidence_and_follow_ups PASSED [100%]
+
+======================== 6 passed in 72.00s (0:01:12) =========================

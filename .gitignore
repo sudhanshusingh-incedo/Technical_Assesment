@@ -1,0 +1,32 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# local state
+.venv/
+.qdrant/
+models/
+data/.parse_cache/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# os / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
