@@ -6,6 +6,8 @@ RAG** (dense + BM25, RRF fusion, cross-encoder reranking) with a **LangGraph age
 A router decides which workflow a question needs. Every answer cites document and page, and questions
 the corpus cannot answer are **declined, not guessed**.
 
+**Demo recording (about 4 minutes):** [watch on Google Drive](https://drive.google.com/file/d/1aZFV6wLUXeUzxJ34040q6vw4-QPMHje2/view)
+
 | Requirement | Where |
 |---|---|
 | Ingestion pipeline (separate, incremental) | `src/kassist/ingestion/`, `python -m kassist.ingestion` |
@@ -16,7 +18,7 @@ the corpus cannot answer are **declined, not guessed**.
 | Evaluation set + approach + results | `configs/eval_questions.yaml`, `scripts/run_eval.py`, `docs/eval/` |
 | Unit + API + E2E tests | `tests/` |
 | Architecture diagram + design write-up | [below](#architecture), [`docs/design.md`](docs/design.md) |
-| Demo UI | `src/kassist/ui/streamlit_app.py` (port 8501) |
+| Demo UI + recording | `src/kassist/ui/streamlit_app.py` (port 8501), [demo video](https://drive.google.com/file/d/1aZFV6wLUXeUzxJ34040q6vw4-QPMHje2/view) |
 
 ---
 
