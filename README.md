@@ -113,8 +113,7 @@ docker compose run --rm ingest python -m kassist.ingestion --force
 ```
 
 * Index contents: Qdrant dashboard at http://localhost:6333/dashboard (collection `knowledge_base`).
-* Chunk quality: `python scripts/inspect_chunks.py` writes every chunk with its section and pages to
-  `docs/chunk_samples.md`.
+* Chunk quality: sample chunks with their section and pages are in `docs/chunk_samples.md`.
 * Safety checks: if the index was built with a different embedding model or chunking settings than the
   API is configured for, `/ready` reports it and the API refuses to answer until ingestion is re-run.
 * Automated tests: `pytest tests/unit/test_pipeline.py tests/unit/test_chunker.py tests/unit/test_cleaning.py`
@@ -161,8 +160,7 @@ Assumptions (the brief invites safe assumptions):
 
 ![Architecture diagram](docs/architecture.png)
 
-Also as [SVG](docs/architecture.svg). Rendered from code with `python scripts/render_architecture.py`, so it is
-versioned with the implementation.
+Also as [SVG](docs/architecture.svg), versioned with the implementation.
 
 The LangGraph state graph (generated from the code with `graph.get_graph().draw_mermaid()`):
 
@@ -565,8 +563,7 @@ src/kassist/
   conversations.py     server-side conversation history (SQLite store, TTL, turn cap)
   services.py          composition root (+ index refresh after re-ingestion)
 configs/               default.yaml, eval_questions.yaml
-scripts/               local.sh (setup/test/run), run_eval.py, download_models.py,
-                       inspect_chunks.py, render_architecture.py
+scripts/               local.sh (setup/test/run), run_eval.py, download_models.py
 tests/                 unit/, integration/ (API + UI), e2e/ (live stack)
 docs/                  design.md, architecture.png/.svg, eval/ (reports + e2e test log), chunk_samples.md
 Dockerfile, docker-compose.yml, .env.example, requirements.txt, pyproject.toml, .github/workflows/ci.yml
